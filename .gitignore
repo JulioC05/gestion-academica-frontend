@@ -1,0 +1,32 @@
+# Dependencias (NUNCA se suben a GitHub, son extremadamente pesadas)
+node_modules/
+jspm_packages/
+
+# Carpetas de compilación / producción (se generan automáticamente al hacer build)
+dist/
+build/
+out/
+
+# Archivos de entorno y credenciales (¡CRÍTICO! Contienen tus URLs de Azure, APIs, etc.)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs de errores de npm o yarn
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Archivos de configuración del sistema operativo o editores de código
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

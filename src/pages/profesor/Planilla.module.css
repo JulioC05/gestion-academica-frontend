@@ -1,0 +1,21 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.notaCell {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.promedioCell {
+  font-size: 1.1rem;
+  font-weight: 800;
+}
