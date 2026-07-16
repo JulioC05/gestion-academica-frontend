@@ -173,6 +173,7 @@ function MisNotas() {
   const [error, setError] = useState('')
   const [periodo, setPeriodo] = useState('')
   const [ultimaActualizacion, setUltimaActualizacion] = useState(null)
+  const [nombreAlumno, setNombreAlumno] = useState('')
 
   // Admin puede consultar cualquier alumno vía query param ?alumno_id=X
   const [alumnoIdAdmin, setAlumnoIdAdmin] = useState('')
@@ -183,14 +184,22 @@ function MisNotas() {
       setCargando(true)
       setError('')
       try {
-        // Alumno usa su id_entidad del contexto; Admin envía ?alumno_id=X
+        const token = localStorage.getItem('token')
         const params = esAdmin && alumno_id_override
           ? { alumno_id: alumno_id_override }
           : {}
 
-        const { data } = await api.get('/api/academico/libreta', { params })
+        const { data } = await api.get('/api/academico/libreta', { 
+          params,
+          headers: { Authorization: `Bearer ${token}` }
+        })
+        
         setLibreta(data.libreta || [])
         setPeriodo(data.periodo_evaluado || '')
+        
+        // Seteamos el nombre que ahora nos manda de forma nativa el backend
+        setNombreAlumno(data.alumno_nombre || '') 
+        
         setUltimaActualizacion(new Date())
       } catch (err) {
         const msg = err.response?.data?.message || 'Error al cargar las notas.'
@@ -228,6 +237,23 @@ function MisNotas() {
               ? `Periodo: ${periodo}`
               : 'Libreta de calificaciones — Sistema vigesimal (0–20)'}
           </p>
+
+          {/* CUADRO CON EL NOMBRE DEL ALUMNO INTEGRADO AL DISEÑO OFICIAL */}
+          {esAdmin && nombreAlumno && !cargando && (
+            <div className="alert alert-success" style={{ 
+              marginTop: '1rem', 
+              display: 'flex', 
+              alignItems: 'center', 
+              gap: '0.75rem',
+              width: 'fit-content',
+              fontSize: '0.95rem'
+            }}>
+              <span>👤</span>
+              <div>
+                <strong>Estudiante consultado:</strong> {nombreAlumno}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Búsqueda admin por alumno_id */}

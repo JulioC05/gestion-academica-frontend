@@ -1,0 +1,55 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Títulos de cabecera de las tarjetas */
+.cardHeaderTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  margin: 0;
+}
+
+/* Doble columna flexible */
+.splitLayout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (min-width: 992px) {
+  .splitLayout {
+    grid-template-columns: 1.2fr 0.8fr; /* Secciones ligeramente más anchas */
+  }
+}
+
+/* Marcador de posición interactivo y centrado */
+.placeholderCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.placeholderCard p {
+  margin: 0;
+  max-width: 250px;
+  line-height: 1.5;
+}
+
+/* Mensajes de carga o vacíos dentro de la tabla */
+.loadingPlaceholder {
+  text-align: center;
+  padding: 3rem 1.5rem !important;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}

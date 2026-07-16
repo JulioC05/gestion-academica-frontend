@@ -143,3 +143,138 @@
   .correo { display: none; }
   .links li a, .dropdown > span { padding: 0.4rem 0.5rem; font-size: 0.8rem; }
 }
+
+/* Botón circular de acceso al Perfil */
+.perfilBtn {
+  background: #334155;
+  border: none;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.perfilBtn:hover {
+  background: #475569;
+  transform: scale(1.05);
+}
+
+/* Modal Overlay (Fondo oscuro transparente) */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.6); /* Color pizarra con opacidad */
+  backdrop-filter: blur(4px); /* Difuminado de fondo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Caja contenedora del Modal */
+.modalContent {
+  background: #ffffff;
+  color: #1e293b;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation: slideUp 0.25s ease-out;
+}
+
+/* Cabecera del modal */
+.modalHeader {
+  background: #1e293b;
+  color: #f1f5f9;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modalHeader h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.closeBtn:hover {
+  color: #f1f5f9;
+}
+
+/* Cuerpo interno */
+.modalBody {
+  padding: 1.5rem;
+}
+
+.loading {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.9rem;
+  padding: 1rem 0;
+}
+
+/* Estructura de filas de información */
+.profileDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.profileRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.profileRow strong {
+  color: #475569;
+}
+
+.profileRow span {
+  color: #0f172a;
+  font-weight: 500;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid #e2e8f0;
+  margin: 0.5rem 0;
+}
+
+/* Pie del modal */
+.modalFooter {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(15px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

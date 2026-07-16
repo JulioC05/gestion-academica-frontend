@@ -1,0 +1,49 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Grilla adaptable para las tarjetas de cursos */
+.gridCursos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .gridCursos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .gridCursos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.detalles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--text-secondary, #475569);
+}
+
+.infoRow strong {
+  color: var(--text-primary, #0f172a);
+  font-weight: 500;
+}
+
+.loadingPlaceholder {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-muted);
+}

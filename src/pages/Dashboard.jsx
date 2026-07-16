@@ -12,6 +12,13 @@ const CARDS_ALUMNO = [
     ruta: '/mis-notas',
     color: '#3b82f6',
   },
+  {
+    icon: '📚',
+    title: 'Mis Cursos',
+    desc: 'Consulta tu libreta de calificaciones y promedios por curso.',
+    ruta: '/mis-cursos',
+    color: '#3b82f6',
+  },
 ]
 
 const CARDS_PROFESOR = [
@@ -43,7 +50,7 @@ const CARDS_ADMIN = [
     icon: '🏫',
     title: 'Secciones',
     desc: 'Revisar planillas de alumnos inscritos por sección.',
-    ruta: '/mis-secciones',
+    ruta: '/planillas',
     color: '#8b5cf6',
   },
   {

@@ -10,6 +10,7 @@ import Dashboard from './pages/Dashboard'
 
 // Alumno
 import MisNotas from './pages/alumno/MisNotas'
+import MisCursos from './pages/alumno/MisCursos'
 
 // Profesor / Admin
 import MisSecciones from './pages/profesor/MisSecciones'
@@ -17,6 +18,7 @@ import Planilla from './pages/profesor/Planilla'
 import RegistrarEvaluacion from './pages/profesor/RegistrarEvaluacion'
 
 // Admin
+import PlanillasSeccion from './pages/admin/PlanillasSeccion'
 import CrearUsuario from './pages/admin/CrearUsuario'
 import GestionCursos from './pages/admin/GestionCursos'
 import GestionPeriodos from './pages/admin/GestionPeriodos'
@@ -53,6 +55,15 @@ function App() {
             }
           />
 
+          <Route
+            path="/mis-cursos"
+            element={
+              <PrivateRoute roles={['ALUMNO', 'ADMIN', 'ADMINISTRADOR']}>
+                <MisCursos />
+              </PrivateRoute>
+            }
+          />
+
           {/* ===== MÓDULO PROFESOR ===== */}
           <Route
             path="/mis-secciones"
@@ -80,6 +91,14 @@ function App() {
           />
 
           {/* ===== MÓDULO ADMIN ===== */}
+          <Route
+            path="/planillas"
+            element={
+              <PrivateRoute roles={['ADMIN', 'ADMINISTRADOR']}>
+                <PlanillasSeccion />
+              </PrivateRoute>
+            }
+          />
           <Route
             path="/admin/usuarios"
             element={
