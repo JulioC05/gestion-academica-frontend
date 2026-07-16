@@ -6,8 +6,8 @@ import styles from './LoginPage.module.css'
 // Credenciales de ejemplo por rol para facilitar las pruebas
 const DEMOS = [
   { rol: 'Alumno',        correo: 'maria.gomez@universidad.edu.pe',  contrasena: 'clave123' },
-  { rol: 'Profesor',      correo: 'carlos.docente@colegio.edu.pe', contrasena: 'profesor123' },
-  { rol: 'Administrador', correo: 'admin@colegio.edu.pe',    contrasena: 'admin123' },
+  { rol: 'Profesor',      correo: 'carlos.docente@colegio.edu.pe', contrasena: 'clave123' },
+  { rol: 'Administrador', correo: 'admin@colegio.edu.pe',    contrasena: 'clave123' },
 ]
 
 function LoginPage() {
